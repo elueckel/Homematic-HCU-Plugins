@@ -1,0 +1,26 @@
+Sigenergy Plug-in für Homematic
+Author: Enno Lueckel
+
+Version 2.2.0 — 2026-08-31
+- Update-Prüfung hinzugefügt: prüft stündlich das Verzeichnis
+  Homematic_Plugin_Sigenergy/ im Repo elueckel/Homematic-HCU-Plugins auf eine
+  neuere Version (verglichen wird nur MAJOR.MINOR). Ein Hinweis mit Link zu den
+  Release-Details erscheint im Übersicht-Tab (nur bei verfügbarem Update) und im
+  Version-Tab (immer, inkl. "Jetzt prüfen"-Button). Rein informativ – kein
+  automatisches Herunterladen, kein Self-Update, kein Neustart, da die
+  Connect-API dafür keine Nachricht anbietet (Plugins werden weiterhin manuell
+  über HCUweb -> Plugins -> "Plugin hochladen" ersetzt).
+- Versionsschema auf MAJOR.MINOR.BUILD umgestellt: normale ./build.sh-Aufrufe
+  erhöhen nur den BUILD-Teil (lokale Testbuilds), ./build.sh --release
+  major|minor erhöht MAJOR/MINOR und setzt BUILD auf 00 zurück.
+
+Version 2.1.0 — 2026-08-24
+- Plugin umbenannt: "Sigenergy Plug-in für Homematic" (DE) / "Sigenergy Plugin
+  for Homematic" (EN) als Anzeigename in HCUweb.
+- Datenabrufe werden zentral protokolliert (Erfolg oder Fehler inkl. Meldung).
+- Neue Sektion "Anzeige & Protokoll" im Einstellungen-Tab: UI-Sprache
+  (Deutsch/Englisch) und Puffergröße des Protokolls sind einstellbar.
+- Neue "Letzter Fehler"-Karte im Übersicht-Tab.
+- Neue Tabs "Version" und "Lizenz".
+
+**2.0.0 und früher** — siehe README.md / Git-Historie.
