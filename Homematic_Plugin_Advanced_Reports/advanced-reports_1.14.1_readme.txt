@@ -1,0 +1,36 @@
+Homematic Advanced Reports
+Author: Enno Lueckel
+
+Version 1.14.1 — 2026-09-03
+- Fehlerbehebung: zwei Sicherungen am selben Tag (z. B. "Backup jetzt" zusätzlich zum geplanten Lauf) haben sich auf der SMB-Freigabe stillschweigend gegenseitig überschrieben, weil der Dateiname nur das Datum trug, keine Uhrzeit. Behoben durch Nachziehen der gemeinsamen Plugin-Bibliothek; bereits vorhandene Sicherungen bleiben lesbar.
+
+Version 1.14.0 — 2026-09-02
+- Neu: echte, zeitgesteuerte Datensicherung auf eine SMB-Netzwerkfreigabe (z. B. eine FRITZ!Box), unter "System & Backup" — Konfiguration UND aufgezeichnete Messwerte, mit Aufbewahrungsfrist und optionaler Sicherung beim Herunterfahren. Anders als der bisherige, reine Export in v1.11.0 lässt sich aus so einer Sicherung auch tatsächlich wiederherstellen: die Weboberfläche bleibt während der kurzen Umschaltzeit erreichbar (kein Neustart nötig), eine fehlgeschlagene Prüfung nach dem Einspielen macht die Wiederherstellung automatisch rückgängig.
+- Die bestehenden Knöpfe "Konfiguration herunterladen" und "Messdaten herunterladen" (reiner Export, ohne Wiederherstellung) bleiben unverändert bestehen.
+
+Version 1.13.0 — 2026-09-02
+- Wartung: interne Bausteine (Anmeldeschutz, Lizenztext, Icon-Einbettung, Update-Prüfung, E-Mail-Versand inkl. Microsoft-Anmeldung) laufen jetzt über eine gemeinsame Bibliothek, die sich mehrere Plugins dieser Familie teilen — einfacher zu pflegen, keine sichtbare Funktionsänderung.
+
+Version 1.12.0 — 2026-09-02
+- Neu: Zeitraum-Kennzahlen — neben Berechnungen (Formel) jetzt eine zweite Art von Datenpunkt unter "Berechnungen": Minimum, Maximum, Durchschnitt oder Median eines einzelnen Datenpunkts über einen gewählten Zeitraum, z. B. die durchschnittliche Außentemperatur der letzten 7 Tage als eigener, sichtbarer Datenpunkt. Das Ergebnis wird wie jede Berechnung aufgezeichnet und lässt sich in Reports, Tabellen und E-Mails verwenden.
+- Fehlerbehebung: ein berechneter Datenpunkt wurde in der Datenpunkt-Auswahl und in Tabellen fälschlich als "REST" statt als "Berechnet" beschriftet.
+
+Version 1.11.0 — 2026-09-01
+- Neu: Messdaten lassen sich jetzt zusätzlich zur Konfiguration sichern (Download als SQLite-Datei; Wiederherstellung folgte in v1.14.0).
+- Neu: drittes Tabellenlayout "Nur aktuelle Werte" — eine Zeile je Datenpunkt mit dessen letztem Messwert, ohne Zeitverlauf. Gedacht für die Übersicht über mehrere Geräte auf einen Blick, auch per E-Mail.
+- Klick auf eine Spaltenüberschrift sortiert jetzt auch die REST-Datenhaltung, die Listen von Dashboards, Reports, Berechnungen und Mail-Aufträgen sowie die Geräte-Tabelle unter "Datenerfassung".
+- Der Report- und der Berechnungs-Editor zeigen die bereits gewählten Datenpunkte jetzt in einer eigenen Box, getrennt von der Suche darunter.
+- Ein Report lässt sich jetzt direkt aus dem Konfigurator heraus öffnen.
+
+Version 1.10.0 — 2026-09-01
+- Neu: ein E-Mail-Versand kann jetzt auf "nur senden, wenn etwas gefunden wurde" gestellt werden.
+- Neu: Datentabellen können jetzt wahlweise als "Werte untereinander" dargestellt werden statt als Spalten je Datenpunkt.
+
+Version 1.9.0 – 1.9.2 — 2026-08-31 bis 2026-09-01
+- Neu: Zähler-/Differenzmodus für Serien wie Regenmengen- oder Energiezähler — ein Report zeigt die Zunahme je Zeitraum statt des rohen, immer weiter steigenden Zählerstands.
+- Diverse Layout-Korrekturen an Datenpunkt-Auswahl, Berechnungs-Editor und Mail-Versand.
+
+---
+Hinweis: Diese Liste beginnt mit den zuletzt veröffentlichten Versionen.
+Ältere Änderungen liegen im privaten Entwicklungs-Repository und sind hier
+nicht im Detail aufgeführt.
