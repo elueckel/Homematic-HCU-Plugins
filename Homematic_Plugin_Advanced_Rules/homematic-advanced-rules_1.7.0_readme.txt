@@ -1,0 +1,43 @@
+Homematic Advanced Rules
+Author: Enno Lueckel
+
+Version 1.7.0 — 2026-09-03
+- Neu: Auslöser können jetzt auch mit "kleiner", "kleiner gleich", "größer" und "größer gleich" arbeiten, nicht nur mit "gleich" — praktisch z. B. für Temperatur- oder Helligkeitsschwellen. Der Auslöser feuert genau einmal beim Über-/Unterschreiten, nicht bei jeder Prüfung während der Schwellenwert weiter überschritten bleibt.
+- Neu: Aktionen einer Regel lassen sich jetzt per Pfeil-Tasten (↑/↓) umsortieren, statt sie löschen und neu anlegen zu müssen, um z. B. eine Wartezeit an die richtige Stelle zu schieben.
+- Fehlerbehebung: Uhrzeiten ohne führende Null (z. B. "8:30") wurden uneinheitlich angezeigt. Zeiten werden jetzt beim Speichern und Anzeigen einheitlich als "08:30" dargestellt — auch bereits vorhandene Zeitprofile zeigen die korrekte Schreibweise sofort, ohne erneutes Speichern.
+- Gruppen, Zeitprofile und Variablen öffnen beim Bearbeiten jetzt eine eigene Seite (wie schon bei Regeln), statt sich unpassend unter der Liste aufzuklappen. "Zurück" führt wieder zur Übersicht.
+- Fehlerbehebung: In der Zeitprofil-Bearbeitung schlossen die Tage-Knöpfe ("+Sa", "+So" usw.) die ganze Konfiguration, statt nur die Tage zu setzen.
+- Die Listen für Regeln, Gruppen, Zeitprofile und Variablen brechen auf schmalen Bildschirmen (Smartphone) nicht mehr in unleserliche Einzelwort-Zeilen um; die Spaltenüberschriften der Regel-Übersicht stehen jetzt korrekt über den passenden Spalten.
+- Der Simulator gliedert seine Eingabefelder jetzt sichtbar in "Auslöser" und "Bedingungen", in der gleichen Reihenfolge wie später die Auswertung.
+
+Version 1.6.0 — 2026-09-02
+- Fehlerbehebung: Ein "Einmalig"-Auslöser, dessen Datum/Uhrzeit nach dem ersten Auslösen bearbeitet und neu gespeichert wurde, feuerte danach nie wieder — ohne jeden Hinweis in der Oberfläche. Ein bearbeiteter Auslöser bewaffnet sich jetzt korrekt neu.
+- Fehlerbehebung: Eine Sicherung ließ sich nicht wiederherstellen ("database is not open") — betraf jede Wiederherstellung, unabhängig vom Inhalt der Sicherung.
+- Der Dateiname einer Sicherung enthält jetzt Datum UND Uhrzeit statt nur das Datum, damit mehrere Sicherungen vom selben Tag unterscheidbar bleiben.
+- Bei Gruppen ist die Speichern-Leiste jetzt genauso fixiert sichtbar wie bei der Geräte-Auswahl im Regel-Editor.
+- Die Regel-Übersicht zeigt jetzt den Raum des geschalteten Geräts an (z. B. wo sich ein Rollladen befindet), auch wenn der Regel kein Raum manuell zugewiesen wurde.
+- Neu: Update-Prüfung auf der Version-Seite — zeigt an, sobald eine neuere Version veröffentlicht wurde, mit Link zu den Release-Details und einem "Jetzt prüfen"-Knopf. Kein automatischer Download, kein Selbst-Update. (Korrigiert am 03.09.2026: die Prüfung schlug bei jeder Installation mit einem Fehler fehl und die Anzeige hatte kein Padding — beides behoben, weiterhin als Version 1.6.0 ausgeliefert.)
+
+Version 1.5.0 — 2026-09-02
+- Fehlerbehebung: Der "In die Gruppe"-Knopf beim Hinzufügen eines Gerätes zu einer Gruppe tat nichts.
+- Passwortschutz jetzt zweistufig: ein neu gesetztes Passwort sperrt die Oberfläche nicht mehr sofort. Der Wiederherstellungslink wird zuerst dauerhaft angezeigt (übersteht auch ein Neuladen der Seite); erst nach ausdrücklicher Bestätigung ("Link kopiert und gesichert") wird der Schutz tatsächlich aktiviert.
+
+Version 1.4.9 — 2026-09-02
+- Fehlerbehebung: Enter-Taste im Geräte-Suchfeld (beim Hinzufügen eines Auslösers, einer Bedingung oder Aktion) konnte versehentlich den zuletzt hinzugefügten Eintrag löschen, statt eine Suche auszulösen.
+
+Version 1.4.8 — 2026-09-02
+- Das Abrufintervall der Homematic-Daten lässt sich jetzt auch auf 15 Sekunden stellen (bisher 30/60/120).
+
+Version 1.4.7 — 2026-09-02
+- Systemseite neu geordnet: Engine, Passwort, Türschlösser, SMB-Sicherung und Datenbank sind jetzt eigenständige, unabhängig voneinander speicherbare Abschnitte.
+- Passwort-Zurücksetzen per Einmal-Link, falls das Passwort vergessen wird.
+- Layout-Korrektur bei den Türschloss-PIN-Feldern (Ausrichtung bei unterschiedlich langen Gerätenamen).
+
+Version 1.4.6 — 2026-09-02
+- Fehlerbehebung: Die SMB-Sicherung nutzte nach einer Einstellungsänderung (Zielordner, Aufbewahrungsdauer) weiterhin die alten Werte, bis das Plugin neu gestartet wurde.
+- Neuer "Login testen"-Knopf bei den SMB-Einstellungen, direkt neben "Übernehmen".
+
+---
+Hinweis: Diese Liste beginnt mit den zuletzt veröffentlichten Versionen.
+Ältere Änderungen (bis Version 1.0) liegen im privaten Entwicklungs-Repository
+und sind hier nicht im Detail aufgeführt.
