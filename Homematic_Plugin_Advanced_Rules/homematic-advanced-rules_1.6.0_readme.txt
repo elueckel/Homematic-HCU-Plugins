@@ -7,7 +7,7 @@ Version 1.6.0 — 2026-09-02
 - Der Dateiname einer Sicherung enthält jetzt Datum UND Uhrzeit statt nur das Datum, damit mehrere Sicherungen vom selben Tag unterscheidbar bleiben.
 - Bei Gruppen ist die Speichern-Leiste jetzt genauso fixiert sichtbar wie bei der Geräte-Auswahl im Regel-Editor.
 - Die Regel-Übersicht zeigt jetzt den Raum des geschalteten Geräts an (z. B. wo sich ein Rollladen befindet), auch wenn der Regel kein Raum manuell zugewiesen wurde.
-- Neu: Update-Prüfung auf der Version-Seite — zeigt an, sobald eine neuere Version veröffentlicht wurde, mit Link zu den Release-Details und einem "Jetzt prüfen"-Knopf. Kein automatischer Download, kein Selbst-Update.
+- Neu: Update-Prüfung auf der Version-Seite — zeigt an, sobald eine neuere Version veröffentlicht wurde, mit Link zu den Release-Details und einem "Jetzt prüfen"-Knopf. Kein automatischer Download, kein Selbst-Update. (Korrigiert am 03.09.2026: die Prüfung schlug bei jeder Installation mit einem Fehler fehl und die Anzeige hatte kein Padding — beides behoben, weiterhin als Version 1.6.0 ausgeliefert.)
 
 Version 1.5.0 — 2026-09-02
 - Fehlerbehebung: Der "In die Gruppe"-Knopf beim Hinzufügen eines Gerätes zu einer Gruppe tat nichts.
