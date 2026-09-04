@@ -25,6 +25,7 @@ Version 1.8.0 — 2026-09-04
 - Die Variablen-Übersichtskarte im Regel-Editor wurde entfernt — Variablen haben bereits eine eigene Verwaltungsseite, die zusätzliche Karte war unnötiger Ballast.
 - Die Kopfzeile der Auslöser-Karte im Regel-Editor ist jetzt hell orange hinterlegt.
 - Fehlerbehebung: auf schmalen Bildschirmen (Smartphone) musste bisher die komplette Seite seitlich verschoben werden, um die obere Navigationsleiste vollständig zu sehen — nicht nur die Leiste war betroffen, sondern die ganze Seite rutschte mit. Jetzt bleibt die Seite an die Displaybreite angepasst; nur die Navigationsleiste selbst lässt sich bei Bedarf seitlich wischen.
+- In der Geräte-/Variablen-Auswahl erkennt man jetzt auf einen Blick, was schon verwendet wird: bei Gruppen lässt sich ein bereits hinzugefügtes Mitglied direkt in der Liste unten wieder entfernen; bei Regeln zeigt ein Hinweis "bereits verwendet" an, wenn ein Datenpunkt schon als Auslöser, Bedingung oder Aktion in dieser Regel steckt.
 
 Version 1.7.0 — 2026-09-03
 - Neu: Auslöser können jetzt auch mit "kleiner", "kleiner gleich", "größer" und "größer gleich" arbeiten, nicht nur mit "gleich" — praktisch z. B. für Temperatur- oder Helligkeitsschwellen. Der Auslöser feuert genau einmal beim Über-/Unterschreiten, nicht bei jeder Prüfung während der Schwellenwert weiter überschritten bleibt.
