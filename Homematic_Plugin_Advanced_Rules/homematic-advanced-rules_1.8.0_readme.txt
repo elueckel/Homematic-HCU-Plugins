@@ -22,6 +22,8 @@ Version 1.8.0 — 2026-09-04
 - Neu: Farbsteuerung als Aktion — Farbe (per Farbwähler) und Farbtemperatur (Voreinstellungen oder genauer Kelvin-Wert) für farbige und weiß-einstellbare Leuchten (z. B. Hue), live gegen echte Geräte getestet.
 - Beim Dimmen gibt es jetzt "Ein"/"Aus"-Knöpfe direkt neben dem Dimmwert, statt 0 oder 100 von Hand eintippen zu müssen.
 - Eigene Gruppen lassen sich jetzt nicht mehr nur zum Schalten anlegen, sondern auch für Rollladen, Dimmer, Lamellen, Türschloss, Farbe und Farbtemperatur — eine Aktion kann dann die ganze Gruppe auf einmal ansteuern.
+- Die Variablen-Übersichtskarte im Regel-Editor wurde entfernt — Variablen haben bereits eine eigene Verwaltungsseite, die zusätzliche Karte war unnötiger Ballast.
+- Die Kopfzeile der Auslöser-Karte im Regel-Editor ist jetzt hell orange hinterlegt.
 
 Version 1.7.0 — 2026-09-03
 - Neu: Auslöser können jetzt auch mit "kleiner", "kleiner gleich", "größer" und "größer gleich" arbeiten, nicht nur mit "gleich" — praktisch z. B. für Temperatur- oder Helligkeitsschwellen. Der Auslöser feuert genau einmal beim Über-/Unterschreiten, nicht bei jeder Prüfung während der Schwellenwert weiter überschritten bleibt.
