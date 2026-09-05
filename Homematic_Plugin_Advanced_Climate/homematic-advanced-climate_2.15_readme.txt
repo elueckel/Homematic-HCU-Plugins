@@ -1,6 +1,9 @@
 Homematic Advanced Climate
 Author: Enno Lueckel
 
+Version 2.15.2 — 2026-09-05
+- Fehlerbehebung: Auf der Übersichtsseite stand unter dem Sturmwarner fälschlich der Helligkeits-Durchschnitt ("Aktueller Durchschnitt: WU — · Ecowitt … lx") statt der Windgeschwindigkeit — beide teilten sich versehentlich dieselbe Anzeigezeile. Der Sturmwarner zeigt dort jetzt seinen eigenen Windgeschwindigkeits-Durchschnitt (km/h); der Helligkeits-Durchschnitt hat eine eigene Überschrift und einen eigenen Abschnitt bekommen.
+
 Version 2.15.1 — 2026-09-05
 - Fehlerbehebung: Der gleitende Helligkeits-Durchschnitt zeigte auf der Übersichtsseite immer "NaN lx" statt eines echten Werts oder "—" — der berechnete Durchschnitt wurde intern verworfen, bevor er angezeigt wurde.
 - Die Sturmwarner-Seite war durch die vielen neuen Felder unübersichtlich geworden — jetzt in sechs klar beschriftete Gruppen aufgeteilt (Sektoren, Durchschnitt & Notfall-Böe, Rücksetzen, Datenausfall-Wächter, Vorhersage).
