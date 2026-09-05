@@ -1,6 +1,13 @@
 Homematic Advanced Climate
 Author: Enno Lueckel
 
+Version 2.15 — 2026-09-05
+- Sturmwarnung: Der gewöhnliche Auslöser vergleicht jetzt einen Durchschnittswind über einen einstellbaren Zeitraum (Standard 10 Minuten) mit dem Sektor-Schwellwert, statt wie bisher eine einzelne Windböe. Eine neue, ebenfalls einstellbare Notfall-Schwelle (Standard 90 km/h) löst weiterhin sofort und unabhängig von der Windrichtung aus, wenn eine einzelne Böe extrem ausschlägt. Das Zurücksetzen bleibt unverändert an die echte, aktuelle Windböe gekoppelt.
+- Neu: gleitender Helligkeits-Durchschnitt (Lux, aus Solarstrahlung berechnet) über einen einstellbaren Zeitraum — für die Übersichtsseite, weiterleitbar über das Reporting (nur bei lokalem Ecowitt-Empfang) und optional als eigenes Homematic-Gerät anlegbar. Für dieses einzelne, alleinstehende Gerät gilt dieselbe bekannte Einschränkung wie für andere „Einzelwerte“-Geräte: Die Homematic IP App zeigt seinen Wert nicht immer zuverlässig an — ein Hinweis dazu steht direkt neben dem Feld.
+- Neu: ein „Warnung zurücksetzen“-Knopf je Warner (Hitze, Frost, Sturm) — erscheint nur, während der jeweilige Warner ausgelöst ist, und schaltet die Meldung sofort ab. Besteht die auslösende Bedingung weiterhin, kann die Warnung im nächsten Prüfzyklus erneut auslösen — der Knopf silenced, er deaktiviert nicht dauerhaft.
+- Neu: die Übersichtsseite und die Sturmwarner-Seite zeigen jetzt an, ob die Wunderground-Vorhersage aktuell Wind über der Schwelle vorhersagt oder die Sturmwarnung im reaktiven Modus offen hält — bisher war das nur sichtbar, während der Live-Warner selbst bereits ausgelöst hatte.
+- Neu: ntfy.sh-Push-Benachrichtigungen als zweiter, von der Homematic IP App unabhängiger Benachrichtigungskanal (echte Betriebssystem-Benachrichtigung). Ein globaler Server/Topic für alle Warner, gesteuert über deren bestehende „Push-Nachricht“-Option — kein separater Schalter je Warner nötig.
+
 Version 2.14.2 — 2026-09-03
 - Fehlerbehebung: Die Update-Prüfung meldete seit 2.13.0 immer „Prüfung fehlgeschlagen" (HTTP 404). Ursache: sie fragte die GitHub-Releases-API des privaten Quellcode-Repos ab — private Repos beantworten unauthentifizierte Anfragen grundsätzlich mit 404, egal ob ein Release existiert. Die Prüfung nutzt jetzt wieder dieses öffentliche Verzeichnis, wo die fertigen Pakete tatsächlich veröffentlicht werden.
 - Interne Aufräumarbeiten: doppelte, inzwischen im gemeinsamen homematic-tools-Paket enthaltene Logik entfernt (Passwortschutz-Modul, Icon-Einbettung, Versionsvergleich) — kein sichtbares Verhalten geändert.
