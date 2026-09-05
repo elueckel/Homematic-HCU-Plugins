@@ -1,6 +1,11 @@
 Homematic Advanced Climate
 Author: Enno Lueckel
 
+Version 2.15.1 — 2026-09-05
+- Fehlerbehebung: Der gleitende Helligkeits-Durchschnitt zeigte auf der Übersichtsseite immer "NaN lx" statt eines echten Werts oder "—" — der berechnete Durchschnitt wurde intern verworfen, bevor er angezeigt wurde.
+- Die Sturmwarner-Seite war durch die vielen neuen Felder unübersichtlich geworden — jetzt in sechs klar beschriftete Gruppen aufgeteilt (Sektoren, Durchschnitt & Notfall-Böe, Rücksetzen, Datenausfall-Wächter, Vorhersage).
+- Die Einstellungen-Seite war ebenfalls zu einer sehr langen Liste angewachsen — jetzt in sechs Reiter aufgeteilt (Allgemein, Datenquellen, Verlauf, Benachrichtigungen, Sicherung, Sicherheit), wie schon im Advanced-Rules-Modul.
+
 Version 2.15 — 2026-09-05
 - Sturmwarnung: Der gewöhnliche Auslöser vergleicht jetzt einen Durchschnittswind über einen einstellbaren Zeitraum (Standard 10 Minuten) mit dem Sektor-Schwellwert, statt wie bisher eine einzelne Windböe. Eine neue, ebenfalls einstellbare Notfall-Schwelle (Standard 90 km/h) löst weiterhin sofort und unabhängig von der Windrichtung aus, wenn eine einzelne Böe extrem ausschlägt. Das Zurücksetzen bleibt unverändert an die echte, aktuelle Windböe gekoppelt.
 - Neu: gleitender Helligkeits-Durchschnitt (Lux, aus Solarstrahlung berechnet) über einen einstellbaren Zeitraum — für die Übersichtsseite, weiterleitbar über das Reporting (nur bei lokalem Ecowitt-Empfang) und optional als eigenes Homematic-Gerät anlegbar. Für dieses einzelne, alleinstehende Gerät gilt dieselbe bekannte Einschränkung wie für andere „Einzelwerte“-Geräte: Die Homematic IP App zeigt seinen Wert nicht immer zuverlässig an — ein Hinweis dazu steht direkt neben dem Feld.
