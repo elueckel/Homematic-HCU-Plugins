@@ -1,6 +1,12 @@
 Homematic Advanced Climate
 Author: Enno Lueckel
 
+Version 2.16.2 — 2026-09-08
+- Übersicht-Tabelle unter Rohdaten zeigt jetzt auch den aktuellen Wert je Messreihe.
+
+Version 2.16.1 — 2026-09-06
+- "/api/v1/query" und "/api/v1/series" verwenden jetzt denselben geteilten Code (homematic-tools' externalValues.handleQuery/handleSeries) wie das Advanced-Reports-Modul, statt eigener, handgeschriebener Anfrage-Logik. Nebenbei behoben: Die obersten "from"/"to"-Felder der Antwort von "/api/v1/query" waren fälschlich in Millisekunden statt in Unix-Sekunden angegeben — rein kosmetisch, kein abnehmendes Plugin hat dieses Feld je ausgewertet.
+
 Version 2.16 — 2026-09-06
 - Neu: eine schreibgeschützte API ("/api/v1/query" und "/api/v1/series"), mit der andere Plugins (z. B. Advanced Rules) Wetter- und Warnwerte dieses Moduls als externe Datenquelle abfragen können — mit eigenem, auf der Sicherheits-Seite erzeugbarem Zugangs-Token, unabhängig vom normalen Weboberflächen-Zugang.
 
