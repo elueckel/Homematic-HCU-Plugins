@@ -1,6 +1,20 @@
 Homematic Advanced Rules
 Author: Enno Lueckel
 
+Version 1.19.2 — 2026-09-21
+- Neu: ein Vergleichs-Auslöser (>, <, >=, <=, = ohne Mehrfachauslösung), dessen Bedingung schon beim Start des Plugins (oder beim allerersten beobachteten Wert eines Datenpunkts) erfüllt ist, feuert jetzt sofort einmalig, statt auf eine künftige Überschreitung zu warten, die bei einem trägen Sensor unter Umständen nie eintritt. Nebeneffekt: eine Regel, deren Bedingung zufällig schon erfüllt ist, feuert dadurch bei jedem Neustart (z. B. nach einem Update) erneut.
+- Neu: "Jetzt auslösen"-Knopf im Regeleditor — prüft die Bedingungen des ersten passenden Zweigs ganz normal und führt dessen Aktionen sofort aus, ohne auf den echten Auslöser zu warten. Funktioniert auch bei deaktivierten Regeln.
+- Fehlerbehebung: im Test & Simulator füllte "Echte Istwerte übernehmen" bei Auslösern/Bedingungen auf eine externe Quelle oder eine Variable nie den echten Wert, sondern blieb leer — nur reine Gerätewerte wurden korrekt übernommen.
+- Fehlerbehebung: lehnte eine Gruppen-Bedingung (UND/ODER-Klammer) ab, zeigte das Logbuch bisher nur die unspezifische Gruppen-Zusammenfassung ("... trifft nicht zu") statt der konkreten Einzelbedingung, die tatsächlich fehlschlug. Die abgelehnte Einzelbedingung samt gemessenem Wert steht jetzt im Logbuch.
+
+Version 1.18.6 — 2026-09-18
+- Neu: Bedingungen einer Regel lassen sich jetzt in einer echten UND/ODER-Klammer ("+ Gruppe") gruppieren. Bisher konnte eine Bedingungsliste nur die flache Reihenfolge UND-bindet-stärker-als-ODER ausdrücken, ohne Klammern — das führte in der Praxis zu Fehlauslösungen: z. B. eine Markisen-Regel "Sommer UND kein Regen UND kein Sturm UND Sonne stark ODER Helligkeit hoch" sollte "UND ZUSÄTZLICH Sonne ODER Helligkeit" bedeuten, wurde aber als drei unabhängige Alternativen ausgewertet — die Markise fuhr dadurch auch nachts ohne jedes Sonnenlicht aus. Eine Gruppe fasst die Sonnen-/Helligkeits-Prüfung jetzt korrekt als eigene, verlangte Klammer zusammen.
+- Neu: Zeitfenster-Bedingungen können Sonnenaufgang/Sonnenuntergang (mit Versatz in Minuten) als Grenze nutzen, genau wie schon beim Astro-Auslöser — deckt z. B. "ist es gerade Tag" (Sonnenaufgang bis Sonnenuntergang) in einem einzigen Schritt ab.
+- Neu: Bedingungen einer Regel lassen sich per Pfeil-Tasten (↑/↓) umsortieren, genau wie schon bei Aktionen.
+- Neu: "+ Jährlich-Auslöser" lässt sich wieder direkt anlegen (feste jährlich wiederkehrende Auslösung, z. B. immer am 1.5.), ohne dafür ein Zeitprofil anlegen zu müssen.
+- Fehlerbehebung: nach jedem Hinzufügen/Löschen/Verschieben/Speichern sprang die Seite bisher an den Anfang zurück, statt an der bearbeiteten Stelle zu bleiben — betraf jeden Editor (Regeln, Variablen, Externe Quellen, Zeitprofile, Kalender).
+- Fehlerbehebung: ein Auslöser, der einen Gerätewert gegen einen zweiten, lebenden Referenzwert vergleicht (z. B. "Ist-Temperatur größer als Solltemperatur"), erkannte eine Über-/Unterschreitung bisher nur, wenn sich der verglichene Wert selbst änderte — blieb dieser konstant und nur der Referenzwert bewegte sich, löste die Regel nie erneut aus.
+
 Version 1.18.0 — 2026-09-08
 - Neu: eine externe Quelle kann für jeden Datenpunkt jetzt zusätzlich zum aktuellen Wert eine Aggregation über ein Zeitfenster liefern — Minimum, Mittelwert, Median oder Maximum der letzten X Minuten, z. B. "Helligkeit, Maximum der letzten 15 Minuten". Beim Abrufen der verfügbaren Datenpunkte lässt sich direkt auswählen, was übernommen werden soll und wie es aggregiert werden soll — die Auswahl wird sofort gespeichert, statt nur eine Vorschau zu zeigen. Ein "Jetzt aktualisieren"-Knopf fragt die Werte bei Bedarf sofort ab, statt auf das nächste reguläre Poll-Intervall zu warten.
 - Fehlerbehebung: die Fenster-Aggregation einer externen Quelle lieferte bisher nie einen Wert ("noch kein Wert"), unabhängig davon, wie gut die Quelle erreichbar war — jetzt behoben, inklusive korrektem Zeitstempel in der eingestellten Zeitzone.
