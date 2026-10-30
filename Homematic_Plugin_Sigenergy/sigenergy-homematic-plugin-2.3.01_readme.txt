@@ -1,7 +1,7 @@
 Sigenergy Plug-in für Homematic
 Author: Enno Lueckel
 
-Version 3.0.0 — 2026-10-30
+Version 2.3.1 — 2026-10-30
 Grundlegende Umstellung: Das Plugin spricht jetzt direkt und lokal per Modbus TCP
 (Port 502) mit dem Sigenergy-Wechselrichter im Heimnetz. Die Sigenergy-Cloud und
 Zugangsdaten werden nicht mehr benötigt.
@@ -21,5 +21,7 @@ Zugangsdaten werden nicht mehr benötigt.
   und mit wachsenden Abständen (bis 60 Sekunden) erneut zu verbinden und meldet
   sich selbst wieder bereit, ohne dass Einstellungen neu gespeichert werden müssen.
 - Hinweis: Modbus TCP muss am Wechselrichter freigegeben sein (siehe README.md).
+- Hinweis: Wegen gleichem MAJOR.MINOR (2.3) zeigt die Update-Prüfung von 2.3.0
+  aus keinen Hinweis auf diese Version an, sie muss manuell installiert werden.
 
 Version 2.3.0 und früher — siehe Versionshistorie in README.md.
