@@ -1,6 +1,15 @@
 Sigenergy Plug-in für Homematic
 Author: Enno Lueckel
 
+Version 2.3.2 — 2026-10-30
+- Fix: Das Plugin schaltet die Anlage nicht mehr ungewollt in den Remote-EMS-Modus.
+  Remote EMS wird nur noch aktiviert, wenn ein Betriebsmodus-Schalter bedient wird.
+  Reines Anzeigen der Werte sowie Wallbox-Start/Stopp und Ladestrom lassen die
+  Anlage im normalen Eigenverbrauch. Behebt außerdem Abfrage-Timeouts, die durch
+  das ständige Umschalten entstanden.
+- Hinweis: Wird ein Betriebsmodus-Schalter bedient, geht die Anlage in Remote EMS.
+  Zurück gelangt man über den Schalter "Eigenverbrauch" oder in der Sigen-App.
+
 Version 2.3.1 — 2026-10-30
 Grundlegende Umstellung: Das Plugin spricht jetzt direkt und lokal per Modbus TCP
 (Port 502) mit dem Sigenergy-Wechselrichter im Heimnetz. Die Sigenergy-Cloud und
@@ -18,8 +27,7 @@ Zugangsdaten werden nicht mehr benötigt.
 - Wallbox (nur mit Sigen-AC-Wallbox, die per Modbus erreichbar ist): Start/Stopp
   und Ladestrom-Begrenzung.
 - Stabilere Verbindung: Bei einem Netzwerkaussetzer versucht das Plugin automatisch
-  und mit wachsenden Abständen (bis 60 Sekunden) erneut zu verbinden und meldet
-  sich selbst wieder bereit, ohne dass Einstellungen neu gespeichert werden müssen.
+  und mit wachsenden Abständen (bis 60 Sekunden) erneut zu verbinden.
 - Hinweis: Modbus TCP muss am Wechselrichter freigegeben sein (siehe README.md).
 - Hinweis: Wegen gleichem MAJOR.MINOR (2.3) zeigt die Update-Prüfung von 2.3.0
   aus keinen Hinweis auf diese Version an, sie muss manuell installiert werden.
