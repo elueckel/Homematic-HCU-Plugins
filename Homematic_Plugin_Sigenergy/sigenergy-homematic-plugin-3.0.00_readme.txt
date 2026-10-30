@@ -1,0 +1,25 @@
+Sigenergy Plug-in für Homematic
+Author: Enno Lueckel
+
+Version 3.0.0 — 2026-10-30
+Grundlegende Umstellung: Das Plugin spricht jetzt direkt und lokal per Modbus TCP
+(Port 502) mit dem Sigenergy-Wechselrichter im Heimnetz. Die Sigenergy-Cloud und
+Zugangsdaten werden nicht mehr benötigt.
+- Kein Abfrage-Limit der Cloud mehr: Standard-Abfrageintervall 15 Sekunden statt
+  5 Minuten.
+- Neue Einstellungen: Wechselrichter-IP, Modbus-Port, Slave-ID des Wechselrichters
+  und optional Slave-ID der Wallbox (statt Benutzername/Passwort).
+- Angezeigt werden PV-Erzeugung, Netzbezug/-einspeisung, Batterie (Leistung und
+  Ladestand) und der berechnete Hausverbrauch.
+- Neue Steuerung: Betriebsmodus-Schalter "Eigenverbrauch", "Gezieltes Laden" und
+  "Gezieltes Entladen" (in den Einstellungen unter "Erweiterte Steuerung"
+  aktivierbar). Der frühere Schalter "Volleinspeisung" entfällt, das
+  Modbus-Protokoll kennt diesen Modus nicht.
+- Wallbox (nur mit Sigen-AC-Wallbox, die per Modbus erreichbar ist): Start/Stopp
+  und Ladestrom-Begrenzung.
+- Stabilere Verbindung: Bei einem Netzwerkaussetzer versucht das Plugin automatisch
+  und mit wachsenden Abständen (bis 60 Sekunden) erneut zu verbinden und meldet
+  sich selbst wieder bereit, ohne dass Einstellungen neu gespeichert werden müssen.
+- Hinweis: Modbus TCP muss am Wechselrichter freigegeben sein (siehe README.md).
+
+Version 2.3.0 und früher — siehe Versionshistorie in README.md.
